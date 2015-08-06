@@ -1,0 +1,25 @@
+head
+  title Camera Example
+body
+  h1 Welcome to Meteor!
+  +loginButtons
+  +layout
+  
+template(name="layout")
+  if logged
+    +takePhoto
+  else
+    +hello
+    
+
+
+template(name="hello")
+  button Click Me
+  p You"ve pressed the button {{counter}} times.
+
+
+template(name="takePhoto")
+  p
+    input.capture(type="button", value="Take Photo")
+  p
+    img(src="{{photo}}")
