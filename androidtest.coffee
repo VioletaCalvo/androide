@@ -29,3 +29,10 @@ if Meteor.isServer
   Meteor.startup ->
     # code to run on server at startup
     return
+
+
+#common
+if Meteor.settings.restrictedUsers?
+  Accounts.config
+    restrictCreationByEmailDomain: (email)->
+      email.toLowerCase() in Meteor.settings.restrictedUsers
