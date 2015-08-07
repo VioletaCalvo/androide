@@ -5,7 +5,10 @@ App.info({
 });
 
 App.icons({
-  'android_mdpi': 'public/icons/android/mipmap-mdpi/ic_launcher.png',
-  'android_hdpi': 'public/icons/android/mipmap-hdpi/ic_launcher.png',
-  'android_xhdpi': 'public/icons/android/mipmap-xhdpi/ic_launcher.png'
+  'android_mdpi': 'public/mipmap-mdpi/ic_launcher.png',
+  'android_hdpi': 'public/mipmap-hdpi/ic_launcher.png',
+  'android_xhdpi': 'public/mipmap-xhdpi/ic_launcher.png'
 });
+
+App.accessRule('http://*');
+App.accessRule('https://*');
