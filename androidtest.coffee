@@ -1,7 +1,6 @@
 if Meteor.isClient
 
   Session.setDefault 'counter', 0
-  Sessing.setDefault 'serverReply', 'none'
 
   Template.layout.helpers
     'logged': ->
@@ -14,13 +13,14 @@ if Meteor.isClient
   Template.hello.events
     'click button': ->
       # increment the counter when button is clicked
-      Session.set 'counter', Session.get('counter') + 1
       Meteor.call 'iepa', (err, data) ->
         if err
-          console.log 'cannot connet to server'
+          console.log 'cannot connect to server'
+          console.log err
         else
           console.log data
           console.log 'connected to server!'
+      Session.set 'counter', Session.get('counter') + 1
 
   Template.takePhoto.events 'click .capture': ->
     MeteorCamera.getPicture {}, (error, data) ->
@@ -36,7 +36,7 @@ if Meteor.isServer
     # code to run on server at startup
     return
 
-  Meteor.methods ->
+  Meteor.methods
     'ping': -> 'iepa'
 
   #account settings
