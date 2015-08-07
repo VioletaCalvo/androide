@@ -13,7 +13,7 @@ if Meteor.isClient
   Template.hello.events
     'click button': ->
       # increment the counter when button is clicked
-      Meteor.call 'iepa', (err, data) ->
+      Meteor.call 'ping', (err, data) ->
         if err
           console.log 'cannot connect to server'
           console.log err
