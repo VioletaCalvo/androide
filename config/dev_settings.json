@@ -1,5 +1,5 @@
 {
   "env": "DEV",
-  "restrictedUsers": ["violeta.itt@gmail.com"],
+  "restrictedUsers": ["useremail@gmail.com"],
   "httpProxyCount": 1
 }
